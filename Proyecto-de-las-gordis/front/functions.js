@@ -1,57 +1,51 @@
 var usuarioLogueadoId = 0
 
-function analizarLogin(usuario, contraseña) {
-    for (let i = 0; i < users.length; i++) {
-        if (usuario == users[i].nombreUsuario) {
-            if (contraseña == users[i].contraseña) {
-                return usuarioLogueadoId = users[i].idUsuario;
+async function login() {
+    let user = getUsuario();
+    let password = getPassword();
+    let dni = +getDni();
+
+    let usuariosExistentes = await usuariosDB();
+
+    for (let i = 0; i < usuariosExistentes.length; i++) {
+        if (usuariosExistentes[i].nombre == user || usuariosExistentes[i].dni == dni) {
+            if (usuariosExistentes[i].password == password) {
+                usuarioLogueadoId = usuariosExistentes[i].id_usuario;
+                changeScreen();
+                return; // Salir de la función después de un inicio de sesión exitoso
+            } else {
+                alert("La contraseña es incorrecta");
+                return; // Salir de la función después de un error de contraseña
             }
-            else {
-                return 0
-            }
         }
     }
-    return -1
+
+    // Si ningún usuario coincide, muestra el mensaje de error
+    alert("Ese usuario no existe. Inicie el registro");
 }
 
-//7
-function botonIngresar() {
-    let res = analizarLogin(getUser(), getPassword())
-    if (res >= 1) {
-        changeScreen()
-    }
-    else {
-        if (res == 0) {
-            alert("Error: contraseña incorrecta.")
+async function registro() {
+    let usuariosExistentes = await usuariosDB();
+    let user = getUsuario();
+    let password = getPassword();
+    let dni = getDni();
+
+    // Verificar si el usuario ya existe
+    for (let i = 0; i < usuariosExistentes.length; i++) {
+        if (dni == usuariosExistentes[i].dni) {
+            alert("Este usuario ya existe. Aprete el boton ingresar");
+            return;
         }
-        else {
-            alert("Error: el usuario no existe")
-        }
     }
-}
 
-//8 
-function nuevoUsuario(usuario, contraseña) {
-    let creado = true
+    // Si no existe, registrar nuevo usuario
+    let operacion = await registroUsuarios(user, password, dni);
 
-    let resultado = analizarLogin(usuario, contraseña);
-    if (resultado == -1) {
-        users.push(new User(usuario, contraseña))
-            alert("Usuario creado")
-            return true
-    }
-    else {
-        return false
-    }
-}
-    
-//9
-function botonRegistrarse() {
-    let crearUser = nuevoUsuario(getUser(), getPassword())
-    if (crearUser == true) {
-        botonIngresar(getUser(), getPassword())
-    }
-    else {
-        alert("Error: usuario no creado")
+    if (operacion === true) {
+        let usuariosExistentesActual = await usuariosDB();
+        usuarioLogueadoId = usuariosExistentesActual[usuariosExistentesActual.length - 1].id_usuario;
+        changeScreen();
+    } else {
+        alert("Hubo un error en el ingreso de datos");
     }
 }
