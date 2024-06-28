@@ -1,6 +1,5 @@
 var usuarioLogueadoId = 0
 
-//6
 function analizarLogin(usuario, contraseña) {
     for (let i = 0; i < users.length; i++) {
         if (usuario == users[i].nombreUsuario) {

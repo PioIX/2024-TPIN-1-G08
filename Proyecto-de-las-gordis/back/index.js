@@ -20,7 +20,7 @@ app.use(cors());
 app.get('/usuarios', async function(req,res){
     console.log(req.query) //Los pedidos get reciben los datos del req.query
     const respuesta = await MySql.realizarQuery(`SELECT * FROM Usuarios`)
-    res.send({respuesta})
+    res.send(respuesta)
 })
 
 app.get('/traerAlimentos', async function(req,res){
