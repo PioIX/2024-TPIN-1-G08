@@ -2,8 +2,21 @@
   "dependencies": {
     "-": "^0.0.1",
     "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
     "mysql2": "^3.10.1",
     "nodemon": "^3.1.4"
-  }
+  },
+  "name": "back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "keywords": [
+    "ES"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

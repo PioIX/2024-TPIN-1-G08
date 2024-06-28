@@ -11,24 +11,16 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', function(req, res){
-    res.status(200).send({
-        message: 'GET Home route working fine!'
-    });
-});
 
 /**
  * req = request. en este objeto voy a tener todo lo que reciba del cliente
  * res = response. Voy a responderle al cliente
  */
-app.get('/saludo', function(req,res){
-    console.log(req.query) //Los pedidos get reciben los datos del req.query
-    res.send({respuesta: `Respuesta del Backend`})
-})
 
-app.get('/usuarios', function(req,res){
+app.get('/usuarios', async function(req,res){
     console.log(req.query) //Los pedidos get reciben los datos del req.query
-    res.send({respuesta: `Respuesta del Backend`})
+    const respuesta = await MySql.realizarQuery(`SELECT * FROM Usuarios`)
+    res.send({respuesta})
 })
 
 app.get('/traerAlimentos', async function(req,res){
@@ -74,7 +66,7 @@ app.listen(port, function(){
     console.log(`Server running in http://localhost:${port}`);
     console.log('Defined routes:');
     console.log('   [GET] http://localhost:3000/');
-    console.log('   [GET] http://localhost:3000/saludo');
+    console.log('   [GET] http://localhost:3000/usuarios');
     console.log('   [GET] http://localhost:3000/traerCompositores');
     console.log('   [POST] http://localhost:3000/agregarCompositor');
 });
