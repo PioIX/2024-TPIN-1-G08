@@ -24,6 +24,12 @@ async function login() {
     alert("Ese usuario no existe. Inicie el registro");
 }
 
+async function Reglas() {
+    alert(
+        "Estamos chelo en este sector"
+    )
+}
+
 async function registro() {
     let usuariosExistentes = await usuariosDB();
     let user = getUsuario();
@@ -51,16 +57,9 @@ async function registro() {
 }
 
 async function enviarPalabra() {
-    let palabraExistente = await palbras
-    let cantidadLetras = getUsuario();
-    let palabra = getPassword();
-    let definicion = getDni();
-
-    // Verificar si el usuario ya existe
-    for (let i = 0; i < usuariosExistentes.length; i++) {
-        if (dni == usuariosExistentes[i].dni) {
-            alert("Este usuario ya existe. Aprete el boton ingresar");
-            return;
-        }
-}
+    let palabraExistente = await palabras()//cambiar
+    let cantidadLetras = getCantidadLetras();
+    let palabra = getPalabra();
+    let definicion = getDefinicion();
+    let usuarioAdmin = login()
 }
