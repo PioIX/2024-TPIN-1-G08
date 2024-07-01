@@ -31,6 +31,18 @@ app.post('/registrarUsuarios', async function(req, res) {
     res.send("ok");
 });
 
+app.get('/palabras', async function(req, res){
+    console.log(req.query)
+    const respuesta = await MySql.realizarQuery(`SELECT * FROM Palabras`)
+    res.send(respuesta)
+})
+
+app.post('/registrarPalabras', async function(req, res){
+    console.log(req.body)
+    await MySql.realizarQuery(`INSERT INTO Palabras(palabra, cant_letras, descripcion)
+        VALUES('${req.body.palabra}', '${req.body.cantidadLetras}', '${req.body.definicion}')`);
+    res.send("ok");
+})
 //Pongo el servidor a escuchar
 app.listen(port, function(){
     console.log(`Server running in http://localhost:${port}`);
@@ -38,4 +50,6 @@ app.listen(port, function(){
     console.log('   [GET] http://localhost:3000/');
     console.log('   [GET] http://localhost:3000/usuarios');
     console.log('   [POST] http://localhost:3000/registrarUsuarios');
+    console.log('   [POST] http://localhost:3000/registrarPalabras');
+    console.log('   [GET] http://localhost:3000/palabras')
 });
