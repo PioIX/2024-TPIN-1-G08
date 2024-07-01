@@ -64,3 +64,11 @@ async function enviarPalabra() {
         }
 }
 }
+
+function botonLogOut () {
+    usuarioLogueadoId = 0
+    changeScreen() 
+    document.getElementById("username").value = ""
+    document.getElementById("password").value = ""
+    document.getElementById("dni").value = ""
+}
