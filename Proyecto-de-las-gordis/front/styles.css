@@ -47,20 +47,21 @@ h3 {
 
 #login,
 #divlogin,
-#divlogin .shadow {
+#divlogin .shadow,
+#registroPalabras {
     background-color: #FFEFFC;
     font-family: Poppins;
 }
 
 #ingresar,
-#registrarse {
+#registrarse, #enviarPalabra {
     background-color: #444142;
     border-color: #444142;
     color: white; /* Para que el texto de los botones sea blanco */
     font-family: Poppins;
 }
 
-#username, #password {
+#username, #password, #dni, #definicion, #palabra, #cantidadLetras {
     background-color: #c4c1c1;
 }
 

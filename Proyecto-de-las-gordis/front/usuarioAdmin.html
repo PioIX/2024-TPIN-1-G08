@@ -25,33 +25,30 @@
             <h2><img src="images/lobo.png" alt="Lobo">Wordle Pio IX</h2>
             <img src="images/user.png" alt="user" id="user">
         </header>
-        <section id="login" class="rounded">
-            <h3>LOGIN</h3>
-            <div id="divlogin" class="col-auto shadow p-3 mb-5 rounded">
+        <section id="registroPalabras" class="rounded">
+            <h3>REGISTRAR PALABRAS</h3>
+            <div id="divRegistroPalabras" class = "">
                 <div class="shadow p-3 mb-5 rounded">
                     <div class="form-group">
-                        <label for="username">Usuario</label>
-                        <input class="form-control" type="text" id="username">
+                        <label for="cantidadLetras">Cantidad de letras (5,6,7)</label>
+                        <input class="form-control" type="text" id="cantidadLetras">
                     </div>
                     <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input class="form-control" type="text" id="password">
+                        <label for="palabra">Palabra</label>
+                        <input class="form-control" type="text" id="palabra">
                     </div>
                     <div class="form-group">
-                        <label for="dni">DNI</label>
-                        <input class="form-control" type="text" id="dni">
+                        <label for="definicion">Definición</label>
+                        <input class="form-control" type="text" id="definicion">
                     </div>
                     <div class="form-group">
-                        <button id="ingresar" class="btn btn-primary btn-lg btn-block form-check-control" onclick="login()">Ingresar</button>
-                    </div>
-                    <div class="form-group">
-                        <button id="registrarse" class="btn btn-primary btn-lg btn-block form-check-control" onclick="registro()">Registrarse</button>
+                        <button id="enviarPalabra" class="btn btn-primary btn-lg btn-block form-check-control" onclick="enviarPalabra()">Enviar</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="pantallaPrincipal" style="display: none" class="rounded">
-            <h1>Aca va la pantalla principal</h1>
+        <section id="pantallaAdmin" style="display: none" class="rounded">
+            <h1></h1>
         </section>
         <div class="form-group" id="divreglas">
             <button id="reglas" class="btn btn-primary btn-lg btn-block form-check-control" onclick="">Reglas del juego</button>
