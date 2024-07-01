@@ -24,6 +24,12 @@ async function login() {
     alert("Ese usuario no existe. Inicie el registro");
 }
 
+async function Reglas() {
+    alert(
+        "Estamos chelo en este sector"
+    )
+}
+
 async function registro() {
     let usuariosExistentes = await usuariosDB();
     let user = getUsuario();
@@ -65,10 +71,16 @@ async function enviarPalabra() {
 }
 }
 
-function botonLogOut () {
+async function botonLogOut () {
     usuarioLogueadoId = 0
     changeScreen() 
     document.getElementById("username").value = ""
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
+
+    let palabraExistente = await palabras()//cambiar
+    let cantidadLetras = getCantidadLetras();
+    let palabra = getPalabra();
+    let definicion = getDefinicion();
+    let usuarioAdmin = login()
 }

@@ -30,3 +30,19 @@ async function registroUsuarios() {
     })
     return true
 }
+
+async function enviarPalabra(){
+    const data = {
+        palabra: getPalabra(),
+        cantidadPalabras: getCantidadPalabras(),
+        definicion: GetDefinicion()
+    }
+    const response = await fetch('http://localhost:3000/registrarPalabras',{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body:JSON.stringify(data),
+    })
+    return true
+}
