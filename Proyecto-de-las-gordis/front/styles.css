@@ -52,7 +52,7 @@ h3 {
 }
 
 #ingresar,
-#registrarse, #enviarPalabra {
+#registrarse, #enviarPalabra, #mostrarTabla{
     background-color: #444142;
     border-color: #444142;
     color: white; /* Para que el texto de los botones sea blanco */

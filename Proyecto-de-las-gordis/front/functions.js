@@ -77,10 +77,10 @@ async function botonLogOut () {
     document.getElementById("username").value = ""
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
-
-    let palabraExistente = await palabras()//cambiar
+}
+ /*   let palabraExistente = await palabras()//cambiar
     let cantidadLetras = getCantidadLetras();
     let palabra = getPalabra();
     let definicion = getDefinicion();
     let usuarioAdmin = login()
-}
+}*/
