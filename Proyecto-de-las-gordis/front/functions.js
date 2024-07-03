@@ -84,3 +84,7 @@ async function botonLogOut () {
     let definicion = getDefinicion();
     let usuarioAdmin = login()
 }
+
+document.addEventListener("click", ("divreglas") {
+    const reglas 
+})
