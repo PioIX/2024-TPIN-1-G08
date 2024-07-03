@@ -60,3 +60,4 @@ function GetDefinicion() {
     const definicion = document.getElementById("definicion").value
     return definicion
 }
+
