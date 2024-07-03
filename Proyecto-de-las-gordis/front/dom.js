@@ -9,7 +9,12 @@ function changeScreen() {
     const logout = document.getElementById("logout");
     const reglas = document.getElementById("reglas");
 
-    if (pantallaPrincipal.style.display !== "none") {
+    let usernamePiketeras = document.getElementById("username").value
+    let contraseñaPiketeras = document.getElementById("password").value
+    let dniPiketeras = document.getElementById("dni").value
+    if(usernamePiketeras == "piketeras" && contraseñaPiketeras == "ositopipi" && dniPiketeras == "12345678"){
+        location.href = "http://127.0.0.1:5500/Proyecto-de-las-gordis/front/usuarioAdmin.html"
+    }else if (pantallaPrincipal.style.display !== "none") {
         // Ocultar pantalla principal y logout
         pantallaPrincipal.style.display = "none";
         logout.style.display = "none";
@@ -24,19 +29,8 @@ function changeScreen() {
     }
 }
 
-//guada cambia esto!!!!!!!!!!
-/*function changeScreenAdmin() {
-    const pantallaAdmin = document.getElementById("pantallaAdmin");
-    const login = document.getElementById("login");
-    if(pantallaPrincipal.style.display !== "none") {
-        pantallaPrincipal.style.display = "none";
-        login.style.display = "";
-    }
-    else {
-        pantallaPrincipal.style.display = "";
-        login.style.display = "none";
-    }
-}*/
+
+
 function getUsuario(){
     const usuario = document.getElementById("username").value
     return usuario
