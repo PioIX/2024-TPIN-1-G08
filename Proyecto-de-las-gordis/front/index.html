@@ -23,7 +23,7 @@
     <body class="container">
         <header>
             <h2><img src="images/lobo.png" alt="Lobo">Wordle Pio IX</h2>
-            <img src="images/user.png" alt="user" id="user">
+            <button onclick="user()" alt="user" id="user"></button>
         </header>
         <section id="login" class="rounded">
 
@@ -65,15 +65,8 @@
             </div>
         </section>
 
-        <section id="juegos" style="display: none">
-            <div id="fila1">
-                <input id="letra1-1" class="cuad">  
-                <input id="letra1-2" class="cuad"> 
-                <input id="letra1-3" class="cuad"> 
-                <input id="letra1-4" class="cuad"> 
-                <input id="letra1-5" class="cuad"> 
-            </div>
-        </section>
+        <!-- aca se genera la tabla del wordle por funcion del dom -->
+        <section id="juegos" style="display: none"></section>
 
 
         <div class="form-group" id="divLogOut">

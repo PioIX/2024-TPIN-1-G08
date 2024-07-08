@@ -89,3 +89,6 @@ async function revisarPalabra(palabra){
         
     }
 }
+
+//ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
+//input.style.backgroundColor = 'pink';

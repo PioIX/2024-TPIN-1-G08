@@ -43,6 +43,7 @@ function screenLogin() {
     pantallaPrincipal.style.display = "none";
     logout.style.display = "none";
     reglas.style.display = "none";
+    pantallaJuego.style.display = "none"
 }
 
 function screenJugar() {
@@ -90,3 +91,23 @@ function GetDefinicion() {
     return definicion
 }
 
+// funcion para llenar la tabla del wordle segun palabras
+// falta integrar lo de q agarre de la cantidad de letras a partir de la palabra que se vaya a jugar no se como ja
+function crearJuego(cant_letras) {
+    const juegosContainer = document.getElementById('juegos');
+    juegosContainer.innerHTML = '';
+
+    for (let i = 1; i <= 5; i++) {
+        const fila = document.createElement('div');
+        fila.id = `fila${i}`;
+        fila.className = 'fila';
+
+        for (let j = 1; j <= cant_letras; j++) {
+            const input = document.createElement('input');
+            input.id = `letra${i}-${j}`;
+            input.className = 'cuad';
+            fila.appendChild(input);
+        }
+        juegosContainer.appendChild(fila);
+    }
+}
