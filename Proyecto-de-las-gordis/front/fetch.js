@@ -30,10 +30,9 @@ async function registroUsuarios() {
     })
     return true
 }
-<<<<<<< HEAD
 
 async function palabrasGet(){
-    const response = await fetch('http://localhost:3000/palabras',{
+    const response = await fetch('http://localhost:3000/getPalabras',{
         method:"GET",
         headers: {
             "Content-Type": "application/json",
@@ -45,24 +44,11 @@ async function palabrasGet(){
     return(datos) 
 }
 
-=======
-/*async function palabrasGet(){
-    const response = await fetch('http://localhost:3000/usuarios',{
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    })
-    console.log(response)
-    const datos = await response.json()
-    return(datos)
-}
->>>>>>> 924ee6c14e672fb4f451c9124c3e6a6f6c260648*/
-async function enviarPalabra(){
+async function enviarPalabraFetch(palabra, cantidadLetras, definicion){
     const data = {
-        palabra: getPalabra(),
-        cantidadLetras: getCantidadLetras(),
-        definicion: GetDefinicion()
+        palabra: palabra,
+        cantidadLetras: cantidadLetras,
+        definicion: definicion
     }
     const response = await fetch('http://localhost:3000/registrarPalabras',{
         method: "POST",
