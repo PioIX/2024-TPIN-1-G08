@@ -38,9 +38,9 @@ app.get('/palabras', async function(req, res){
 })
 
 app.post('/registrarPalabras', async function(req, res){
-    console.log(req.body)
-    await MySql.realizarQuery(`INSERT INTO Palabras(palabra, cant_letras, descripcion)
-        VALUES('${req.body.palabra}', '${req.body.cantidadLetras}', '${req.body.definicion}')`);
+    console.log(req.body,`INSERT INTO Palabras(palabra, cant_letras, descripcion) VALUES('${req.body.palabra}', '${req.body.cantidadLetras}', '${req.body.definicion}')`)
+    
+    await MySql.realizarQuery(`INSERT INTO Palabras(palabra, cant_letras, descripcion) VALUES('${req.body.palabra}', '${req.body.cantidadLetras}', '${req.body.definicion}')`);
     res.send("ok");
 })
 //Pongo el servidor a escuchar

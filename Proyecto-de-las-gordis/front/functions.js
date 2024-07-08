@@ -57,18 +57,23 @@ async function registro() {
 }
 
 async function enviarPalabra() {
-    let palabraExistente = await palbras
-    let cantidadLetras = getUsuario();
-    let palabra = getPassword();
-    let definicion = getDni();
+    let palabraExistente = await palabrasGet();
+    let cantidadLetras = getPalabra();
+    let palabra = getCantidadLetras();
+    let definicion = GetDefinicion();
 
-    // Verificar si el usuario ya existe
-    for (let i = 0; i < usuariosExistentes.length; i++) {
-        if (dni == usuariosExistentes[i].dni) {
-            alert("Este usuario ya existe. Aprete el boton ingresar");
-            return;
+    for(let i = 0; i< palabraExistente;i++){
+        if( palabra == palabraExistente[i].palabra){
+            alert("Esta palabra ya existe")
         }
-}
+    }
+     let operacion = await enviarPalabra(cantidadLetras, palabra, definicion);
+     if( operacion == true){
+        alert("la palabra se envio correctamente")
+        
+     } else {
+        alert("algo salio mal")
+     }
 }
 
 async function botonLogOut () {
@@ -78,9 +83,3 @@ async function botonLogOut () {
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
 }
- /*   let palabraExistente = await palabras()//cambiar
-    let cantidadLetras = getCantidadLetras();
-    let palabra = getPalabra();
-    let definicion = getDefinicion();
-    let usuarioAdmin = login()
-}*/
