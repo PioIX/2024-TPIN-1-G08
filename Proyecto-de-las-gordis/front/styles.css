@@ -82,3 +82,18 @@ h3 {
     align-items: right;
     justify-content: right;
 }
+
+input.cuad{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    margin-bottom: 40px;
+    font-size: 50px;
+    text-align: center;
+}
+
+#fila1{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}

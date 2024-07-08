@@ -8,6 +8,7 @@ function changeScreen() {
     const login = document.getElementById("login");
     const logout = document.getElementById("logout");
     const reglas = document.getElementById("reglas");
+    const cuadrados = document.getElementById("cuadrados");
 
     let usernamePiketeras = document.getElementById("username").value
     let contraseñaPiketeras = document.getElementById("password").value
@@ -19,12 +20,14 @@ function changeScreen() {
         pantallaPrincipal.style.display = "none";
         logout.style.display = "none";
         reglas.style.display = "none";
+        cuadrados.style.display = "none";
         login.style.display = ""; // Mostrar botón de login si es necesario
     } else {
         // Mostrar pantalla principal y logout
         pantallaPrincipal.style.display = "";
         logout.style.display = ""; // Mostrar botón de logout
         reglas.style.display = "";
+        cuadrados.style.display = ""; //Mostrar los cuadrados
         login.style.display = "none"; // Ocultar botón de login si es necesario
     }
 }

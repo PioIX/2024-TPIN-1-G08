@@ -77,3 +77,19 @@ async function botonLogOut () {
     document.getElementById("dni").value = ""
 }
 
+let palabra = letra
+
+async function revisarPalabra(palabra){
+    let letra1 = document.getElementById("letra1-1").innerHTML
+    let letra2 = document.getElementById("letra1-2").innerHTML
+    let letra3 = document.getElementById("letra1-3").innerHTML
+    let letra4 = document.getElementById("letra1-4").innerHTML
+    let letra5 = document.getElementById("letra1-5").innerHTML
+
+    for (let i = 0; i < palabra.length; i++) {
+        if (palabra[i] == letra1){
+            
+        }
+        
+    }
+}
