@@ -55,6 +55,7 @@ async function registro() {
         alert("Hubo un error en el ingreso de datos");
     }
 }
+<<<<<<< HEAD
 
 async function enviarPalabra() {
     let palabraExistente = await palabrasGet();
@@ -74,6 +75,20 @@ async function enviarPalabra() {
      } else {
         alert("algo salio mal")
      }
+=======
+async function enviarPalabrasFuncion(){
+    let palabraExistente = await palabrasGet()
+    let cantidadLetras = getCantidadLetras();
+    let palabra = getPalabra();
+    let definicion = getDefinicion();
+    for(let i = 0; i<palabrasExistentes; i++){ //crear funcion palabrasExistentes
+        if(palabrasExistentes[i].palabra == palabra){
+            alert("esta palabra ya existe")
+        }
+    }
+
+    let 
+>>>>>>> 924ee6c14e672fb4f451c9124c3e6a6f6c260648
 }
 
 async function botonLogOut () {
@@ -83,3 +98,7 @@ async function botonLogOut () {
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 924ee6c14e672fb4f451c9124c3e6a6f6c260648

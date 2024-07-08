@@ -31,7 +31,7 @@ app.post('/registrarUsuarios', async function(req, res) {
     res.send("ok");
 });
 
-app.get('/palabras', async function(req, res){
+app.get('/getPalabras', async function(req, res){
     console.log(req.query)
     const respuesta = await MySql.realizarQuery(`SELECT * FROM Palabras`)
     res.send(respuesta)
@@ -51,5 +51,5 @@ app.listen(port, function(){
     console.log('   [GET] http://localhost:3000/usuarios');
     console.log('   [POST] http://localhost:3000/registrarUsuarios');
     console.log('   [POST] http://localhost:3000/registrarPalabras');
-    console.log('   [GET] http://localhost:3000/palabras')
+    console.log('   [GET] http://localhost:3000/getPalabras')
 });
