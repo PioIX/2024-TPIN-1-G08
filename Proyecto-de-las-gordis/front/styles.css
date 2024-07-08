@@ -51,6 +51,29 @@ h3 {
     font-family: Poppins;
 }
 
+#pantallaPrincipal,
+#divPantallaPrincipal {
+    background-color: #FFEFFC;
+    font-family: Poppins;
+    height: 300px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente */
+    margin: 0 auto; /* Centra horizontalmente dentro del contenedor padre */
+}
+
+#divPantallaPrincipal {
+    width: 85%;
+    height: 200px;
+    display: flex;
+    flex-direction: column; /* Para que los elementos estén uno encima del otro */
+    align-items: center; /* Para centrar los elementos horizontalmente */
+    justify-content: center; /* Para centrar los elementos verticalmente */
+}
+
+
+
 #ingresar,
 #registrarse, #enviarPalabra, #mostrarTabla{
     background-color: #444142;
@@ -63,24 +86,31 @@ h3 {
     background-color: #c4c1c1;
 }
 
-#reglas {
-    background-color: #797373;
+#reglas, #jugar  {
+    color: white;
+    background-color: #797373; 
     display: flex;
+    justify-content: center;   
     width: auto; /* Ajusta automáticamente el ancho basado en el contenido */
     padding: 5px 10px; /* Ajusta el relleno según sea necesario */
 }
 
 #logout {
-    background-color: #FF5757;
+    background-color: #CF6AB6;
     display: flex;
+    justify-content: right;
     width: auto; /* Ajusta automáticamente el ancho basado en el contenido */
     padding: 5px 10px; /* Ajusta el relleno según sea necesario */
 }
 
-#divreglas {
+#divLogOut {
     display: flex;
-    align-items: right;
     justify-content: right;
+}
+
+#divreglas, #divJugar {
+    display: flex;
+    justify-content: center;
 }
 
 input.cuad{

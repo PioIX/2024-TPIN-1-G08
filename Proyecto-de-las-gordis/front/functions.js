@@ -1,5 +1,5 @@
 var usuarioLogueadoId = 0
-
+changeScreen()
 async function login() {
     let user = getUsuario();
     let password = getPassword();
@@ -65,19 +65,15 @@ async function enviarPalabrasFuncion(){
             alert("esta palabra ya existe")
         }
     }
-
-    let 
 }
 
-async function botonLogOut () {
+async function botonLogOut() {
     usuarioLogueadoId = 0
-    changeScreen() 
+    screenLogin()   
     document.getElementById("username").value = ""
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
 }
-
-let palabra = letra
 
 async function revisarPalabra(palabra){
     let letra1 = document.getElementById("letra1-1").innerHTML
