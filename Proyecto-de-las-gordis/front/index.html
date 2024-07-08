@@ -23,7 +23,7 @@
     <body class="container">
         <header>
             <h2><img src="images/lobo.png" alt="Lobo">Wordle Pio IX</h2>
-            <img src="images/user.png" alt="user" id="user">
+            <button onclick="user()" alt="user" id="user"></button>
         </header>
         <section id="login" class="rounded">
 
@@ -52,12 +52,24 @@
             </div>
         </section>
         <section id="pantallaPrincipal" style="display: none" class="rounded">
-            <h1>Aca va la pantalla principal</h1>
+            <div id="divPantallaPrincipal" class="col-auto shadow p-3 rounded">
+                <div class="form-group" id="divJugar">
+                    <button id="jugar" class="btn btn-lg btn-block form-check-control" onclick="screenJugar()">Jugar</button>
+                </div>
+                <div class="form-group" id="divreglas">
+                    <button id="reglas" class="btn btn-lg btn-block form-check-control" onclick="Reglas()">Reglas del juego</button>
+                </div>
+                <div class="form-group" id="divreglas">
+                    <button id="reglas" class="btn btn-lg btn-block form-check-control" onclick="Puntajes()">Ver Puntajes</button>
+                </div>
+            </div>
         </section>
-        <div class="form-group" id="divreglas">
-            <button id="reglas" class="btn btn-primary btn-lg btn-block form-check-control" onclick="Reglas()">Reglas del juego</button>
-        </div>
-        <div class="form-group" id="divreglas">
+
+        <!-- aca se genera la tabla del wordle por funcion del dom -->
+        <section id="juegos" style="display: none"></section>
+
+
+        <div class="form-group" id="divLogOut">
             <button id="logout" class="btn btn-primary btn-lg btn-block form-check-control" onclick="botonLogOut()">Log Out</button>
         </div>
 

@@ -1,5 +1,5 @@
 var usuarioLogueadoId = 0
-
+changeScreen()
 async function login() {
     let user = getUsuario();
     let password = getPassword();
@@ -65,15 +65,30 @@ async function enviarPalabrasFuncion(){
             alert("esta palabra ya existe")
         }
     }
-
-    let 
 }
 
-async function botonLogOut () {
+async function botonLogOut() {
     usuarioLogueadoId = 0
-    changeScreen() 
+    screenLogin()   
     document.getElementById("username").value = ""
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
 }
 
+async function revisarPalabra(palabra){
+    let letra1 = document.getElementById("letra1-1").innerHTML
+    let letra2 = document.getElementById("letra1-2").innerHTML
+    let letra3 = document.getElementById("letra1-3").innerHTML
+    let letra4 = document.getElementById("letra1-4").innerHTML
+    let letra5 = document.getElementById("letra1-5").innerHTML
+
+    for (let i = 0; i < palabra.length; i++) {
+        if (palabra[i] == letra1){
+            
+        }
+        
+    }
+}
+
+//ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
+//input.style.backgroundColor = 'pink';

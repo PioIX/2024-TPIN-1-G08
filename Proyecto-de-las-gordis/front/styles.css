@@ -11,7 +11,7 @@ h2 {
     display: flex;
     font-size: 45px;
     align-items: center;
-    margin: 0; /* Elimina cualquier margen predeterminado */
+    margin: 0;
     font-family: Figtree;
     font-weight: bold;
 }
@@ -20,11 +20,11 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding-left: 0; /* Elimina cualquier padding izquierdo */
+    padding-left: 0;
 }
 
 h2 img {
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    margin-right: 10px;
     height: 120px;
     align-items: left;
     justify-content: left;
@@ -32,7 +32,7 @@ h2 img {
 
 #user {
     margin-left: auto;
-    height: 50px; /* Ajusta el tamaño de la imagen si es necesario */
+    height: 50px;
 }
 
 h3 {
@@ -51,11 +51,36 @@ h3 {
     font-family: Poppins;
 }
 
+#pantallaPrincipal,
+#divPantallaPrincipal {
+    background-color: #FFEFFC;
+    font-family: Poppins;
+    height: 300px;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#pantallaPrincipal {
+    margin-top: 15%;
+}
+
+#divPantallaPrincipal {
+    width: 85%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #ingresar,
 #registrarse, #enviarPalabra, #mostrarTabla{
     background-color: #444142;
     border-color: #444142;
-    color: white; /* Para que el texto de los botones sea blanco */
+    color: white;
     font-family: Poppins;
 }
 
@@ -63,22 +88,57 @@ h3 {
     background-color: #c4c1c1;
 }
 
-#reglas {
-    background-color: #797373;
+#reglas, #jugar  {
+    color: white;
+    background-color: #797373; 
     display: flex;
-    width: auto; /* Ajusta automáticamente el ancho basado en el contenido */
-    padding: 5px 10px; /* Ajusta el relleno según sea necesario */
+    justify-content: center;   
+    width: auto;
+    padding: 5px 10px;
 }
 
 #logout {
-    background-color: #FF5757;
+    background-color: #CF6AB6;
     display: flex;
-    width: auto; /* Ajusta automáticamente el ancho basado en el contenido */
-    padding: 5px 10px; /* Ajusta el relleno según sea necesario */
+    justify-content: end;
+    width: auto; 
+    padding: 5px 10px; 
 }
 
-#divreglas {
+#divLogOut {
     display: flex;
-    align-items: right;
-    justify-content: right;
+    justify-content: end;
+}
+
+#divreglas, #divJugar {
+    display: flex;
+    justify-content: center;
+}
+
+input.cuad{
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    margin-bottom: 40px;
+    font-size: 50px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+    background-color: #797373;
+}
+
+#fila1, #fila2, #fila3, #fila4, #fila5{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+#user {
+    width: 50px;
+    height: 50px;
+    background: url('images/user.png') no-repeat center center;
+    background-size: cover;
+    border: none; 
+    cursor: pointer;
+    float: right; 
 }
