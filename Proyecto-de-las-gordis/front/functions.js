@@ -77,19 +77,81 @@ async function botonLogOut () {
     document.getElementById("dni").value = ""
 }
 
-let palabra = letra
+let values = []
 
 async function revisarPalabra(palabra){
-    let letra1 = document.getElementById("letra1-1").innerHTML
-    let letra2 = document.getElementById("letra1-2").innerHTML
-    let letra3 = document.getElementById("letra1-3").innerHTML
-    let letra4 = document.getElementById("letra1-4").innerHTML
-    let letra5 = document.getElementById("letra1-5").innerHTML
+    palabra = "letra"
+    let letra1 = document.getElementById("letra1-1").value
+    let letra2 = document.getElementById("letra1-2").value
+    let letra3 = document.getElementById("letra1-3").value
+    let letra4 = document.getElementById("letra1-4").value
+    let letra5 = document.getElementById("letra1-5").value
 
+    letra1 = letra1.toLowerCase()
+    letra2 = letra2.toLowerCase()
+    letra3 = letra3.toLowerCase()
+    letra4 = letra4.toLowerCase()
+    letra5 = letra5.toLowerCase()
+
+    let letras = [letra1, letra2, letra3, letra4, letra5]
+    
     for (let i = 0; i < palabra.length; i++) {
-        if (palabra[i] == letra1){
-            
+
+        if (palabra[i] == letras[0]){
+            if(i == 0){
+                values.push(2)
+            }
+            else if(i != 0){
+                values.push(1)
+            }
+            else{
+                values.push(0)
+            }
         }
-        
+        else if (palabra[i] == letra2){
+            if(i == 1){
+                values.push(2)
+            }
+            else if(i != 1){
+                values.push(1)
+            }
+            else{
+                values.push(0)
+            }
+        }
+        else if (palabra[i] == letra3){
+            if(i == 2){
+                values.push(2)
+            }
+            else if(i != 2){
+                values.push(1)
+            }
+            else{
+                values.push(0)
+            }
+        }
+        else if (palabra[i] == letra4){
+            if(i == 3){
+                values.push(2)
+            }
+            else if(i != 3){
+                values.push(1)
+            }
+            else{
+                values.push(0)
+            }
+        }
+        else if (palabra[i] == letra5){
+            if(i == 4){
+                values.push(2)
+            }
+            else if(i != 4){
+                values.push(1)
+            }
+            else{
+                values.push(0)
+            }
+        }
     }
+    console.log(values)
 }
