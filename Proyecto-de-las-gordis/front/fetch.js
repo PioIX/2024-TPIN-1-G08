@@ -31,7 +31,7 @@ async function registroUsuarios() {
     return true
 }
 async function palabrasGet(){
-    const response = await fetch('http://localhost:3000/usuarios',{
+    const response = await fetch('http://localhost:3000/getPalabras',{
         method: "GET",
         headers: {
             "Content-Type": "application/json",
