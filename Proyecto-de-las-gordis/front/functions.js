@@ -75,20 +75,61 @@ async function botonLogOut() {
     document.getElementById("dni").value = ""
 }
 
-async function revisarPalabra(palabra){
-    let letra1 = document.getElementById("letra1-1").innerHTML
-    let letra2 = document.getElementById("letra1-2").innerHTML
-    let letra3 = document.getElementById("letra1-3").innerHTML
-    let letra4 = document.getElementById("letra1-4").innerHTML
-    let letra5 = document.getElementById("letra1-5").innerHTML
+let fila = 1
+let palabraRand = ""
 
-    for (let i = 0; i < palabra.length; i++) {
-        if (palabra[i] == letra1){
-            
+async function crear(){
+    let palabras = await palabrasGet()
+    let indiceAleatorio = Math.floor(Math.random() * palabras.length);
+    palabraRand = palabras[indiceAleatorio].palabra
+    palabraRand = palabraRand.toLowerCase()
+    let cant_letras = palabraRand.length
+
+    crearJuego(cant_letras)
+}
+
+let letras = []
+
+function arrayLetrasIngresadas(){
+    for (let i = 0; i < palabraRand.length; i++) {
+        let letra = document.getElementById(`letra${fila}-${i+1}`).value
+        letras.push(letra) 
+    }
+
+    for (let i = 0; i < letras.length; i++) {
+        letras[i] = letras[i].toLowerCase()   
+    }
+    
+    fila += 1
+
+    return letras
+}
+
+let values = []
+
+function revisarLetra(numLetra){ 
+    if (palabraRand.includes(letras[numLetra])){
+        for (let i = 0; i < palabraRand.length; i++) {
+            if (i == numLetra){
+                values.push(2)
+            }
         }
-        
+    }
+    else if (palabraRand.includes(letras[numLetra])){
+        values.push(1)
+    }
+    else{
+        values.push(0)
     }
 }
 
+function aciertos(){
+    for (let i = 0; i < letras.length; i++) {
+        revisarLetra(i)
+    }
+
+    letras = []
+    values = []
+}
 //ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
 //input.style.backgroundColor = 'pink';
