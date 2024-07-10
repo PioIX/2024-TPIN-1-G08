@@ -115,29 +115,52 @@ function arrayLetrasIngresadas() {
 
 function revisarLetra(numLetra) {
     let input = document.getElementById(`letra${fila}-${numLetra + 1}`);
-    if (palabraRand[numLetra] === letras[numLetra]) {
+    let letra = letras[numLetra];
+    let countRand = {};  // Para contar ocurrencias de cada letra en la palabra aleatoria
+    let countChecked = {};  // Para contar las ocurrencias de letras ya verificadas
+
+    // Contar las ocurrencias de cada letra en la palabra aleatoria
+    for (let char of palabraRand) {
+        countRand[char] = (countRand[char] || 0) + 1;
+    }
+
+    // Contar las letras ya verificadas
+    for (let i = 0; i < numLetra; i++) {
+        let checkedLetra = letras[i];
+        countChecked[checkedLetra] = (countChecked[checkedLetra] || 0) + 1;
+    }
+
+    if (palabraRand[numLetra] === letra) {
         input.style.backgroundColor = '#becbbd'; // Correcta en la posición correcta
         values.push(2);
-    } else if (palabraRand.includes(letras[numLetra])) {
+    } else if (palabraRand.includes(letra) && (countChecked[letra] || 0) < countRand[letra]) {
         input.style.backgroundColor = '#FFBEEF'; // Correcta pero en la posición incorrecta
         values.push(1);
     } else {
         input.style.backgroundColor = '#797373'; // Incorrecta
         values.push(0);
     }
+
+    // Actualizar el contador de letras verificadas
+    countChecked[letra] = (countChecked[letra] || 0) + 1;
 }
+
 
 function promedioPuntaje(){
      
 }
 
 function aciertos() {
+    arrayLetrasIngresadas()
+
     for (let i = 0; i < letras.length; i++) {
         revisarLetra(i);
     }
     letras = [];
     fila += 1; // Incrementar la fila solo después de procesar y actualizar los colores
 }
+
+
 //ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
 //input.style.backgroundColor = 'pink';
 
