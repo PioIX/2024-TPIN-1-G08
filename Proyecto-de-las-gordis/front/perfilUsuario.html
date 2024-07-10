@@ -23,28 +23,18 @@
     <body class="container">
         <header>
             <h2><img src="images/lobo.png" alt="Lobo">Wordle Pio IX</h2>
-            <button onclick="changeScreenUsuario()" alt="user" id="userBoton"><img src="images/user.png" alt="user" id="user"></button>
+            <button onclick="changeScreenUsuario()" img src="images/user.png" alt="user" id="user"></button>
         </header>
         <section id="registroPalabras" class="rounded">
             <h3 id="tituloPerfil" onload="tituloPerfil()"> Perfil de </h3>
             <div id="divRegistroPalabras" class = "">
                 <div class="shadow p-3 mb-5 rounded">
                     <div class="form-group">
-                        <label for="cantidadLetras">Cantidad de letras (5,6,7)</label>
-                        <input class="form-control" type="text" id="cantidadLetras">
+                        <label for="promedioPuntaje">Promedio de Puntaje</label>
                     </div>
                     <div class="form-group">
-                        <label for="palabra">Palabra</label>
-                        <input class="form-control" type="text" id="palabra">
+                        <label for="Cant_letras_acer">Cantidad de letras acertadas</label>
                     </div>  
-                    <div class="form-group">
-                        <label for="definicion">Definición</label>
-                        <input class="form-control" type="text" id="definicion">
-                    </div>
-                    <div class="form-group">
-                        <button id="enviarPalabra" class="btn btn-primary btn-lg btn-block form-check-control" onclick="enviarPalabra()">Enviar</button>
-                        <button id="mostrarTabla" class="btn btn-primary btn-lg btn-block form-check-control" onclick="mostrarTabla()">Mostrar tabla</button>
-                    </div>
                 </div>
             </div>
         </section>

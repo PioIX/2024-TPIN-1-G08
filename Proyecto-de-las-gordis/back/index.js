@@ -47,6 +47,15 @@ app.post('/registrarPalabras', async function(req, res){
         res.send("ok");
     }
 })
+
+app.post('/registrarPuntajes', async function(req, res) {
+    console.log(req.body);
+    await MySql.realizarQuery(`INSERT INTO Puntajes (aciertos, id_usuario)
+        VALUES ('${req.body.aciertos}', '${req.body.id_usuario}')`);
+
+    res.send("ok");
+});
+
 //Pongo el servidor a escuchar
 app.listen(port, function(){
     console.log(`Server running in http://localhost:${port}`);
@@ -55,5 +64,7 @@ app.listen(port, function(){
     console.log('   [GET] http://localhost:3000/usuarios');
     console.log('   [POST] http://localhost:3000/registrarUsuarios');
     console.log('   [POST] http://localhost:3000/registrarPalabras');
-    console.log('   [GET] http://localhost:3000/getPalabras')
+    console.log('   [GET] http://localhost:3000/getPalabras');
+    console.log('   [POST] http://localhost:3000/registrarPuntajes');
+
 });

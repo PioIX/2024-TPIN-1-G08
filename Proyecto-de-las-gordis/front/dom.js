@@ -8,14 +8,14 @@ function changeScreen() {
     const login = document.getElementById("login");
     const logout = document.getElementById("logout");
     const reglas = document.getElementById("reglas");
-    const userBoton = document.getElementById("userBoton")
+    const userBoton = document.getElementById("user")
     const pantallaJuego = document.getElementById("juegos")
     let usernamePiketeras = document.getElementById("username").value
     let contraseñaPiketeras = document.getElementById("password").value
     let dniPiketeras = document.getElementById("dni").value
     if(usernamePiketeras == "piketeras" && contraseñaPiketeras == "ositopipi" && dniPiketeras == "12345678"){
         location.href = "http://127.0.0.1:5500/Proyecto-de-las-gordis/front/usuarioAdmin.html"//cambia a usuario admin
-    }else if (pantallaPrincipal.style.display !== "none") {
+    }else if (pantallaPrincipal.style.display !== "none" && usernamePiketeras!="piketeras") {
         // Ocultar pantalla principal y logout
         pantallaPrincipal.style.display = "none";
         logout.style.display = "none";
@@ -68,8 +68,7 @@ function changeScreenAdmin(){
 }
 
 function changeScreenUsuario(){
-    location.href = "http://127.0.0.1:5500/Proyecto-de-las-gordis/front/perfilUsuario.html"
-    
+    let ubicacion = location.href = "http://127.0.0.1:5500/Proyecto-de-las-gordis/front/perfilUsuario.html"
 }
 
 
