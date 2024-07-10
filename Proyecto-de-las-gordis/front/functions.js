@@ -1,5 +1,7 @@
 var usuarioLogueadoId = 0
+
 changeScreen()
+
 
 async function login() {
     let user = getUsuario();
@@ -124,6 +126,7 @@ async function botonLogOutAdmin () {
 }
 let fila = 1
 let palabraRand = ""
+let values = []
 
 async function crear(){
     let palabras = await palabrasGet()
@@ -148,11 +151,10 @@ function arrayLetrasIngresadas(){
     }
     
     fila += 1
+    values = []
 
     return letras
 }
-
-let values = []
 
 function revisarLetra(numLetra){ 
     if (palabraRand.includes(letras[numLetra])){
@@ -170,13 +172,17 @@ function revisarLetra(numLetra){
     }
 }
 
+function promedioPuntaje(){
+     
+}
+
 function aciertos(){
     for (let i = 0; i < letras.length; i++) {
         revisarLetra(i)
     }
 
     letras = []
-    values = []
 }
 //ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
 //input.style.backgroundColor = 'pink';
+

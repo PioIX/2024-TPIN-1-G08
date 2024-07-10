@@ -23,24 +23,24 @@
     <body class="container">
         <header>
             <h2><img src="images/lobo.png" alt="Lobo">Wordle Pio IX</h2>
-            <button onclick="user()" alt="user" id="user"></button>
+            <button onclick="changeScreenUsuario()" img src="images/user.png" alt="user" id="user" style="display: none;"></button>
+
         </header>
         <section id="login" class="rounded">
-
             <div id="divlogin" class="col-auto shadow p-3 mb-5 rounded">
                 <h3>LOGIN</h3>
                 <div class="shadow p-3 mb-5 rounded">
                     <div class="form-group">
                         <label for="username">Usuario</label>
-                        <input class="form-control" type="text" id="username">
+                        <input class="form-control" type="text" id="username" value="gua">
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña</label>
-                        <input class="form-control" type="text" id="password">
+                        <input class="form-control" type="text" id="password" value="crack">
                     </div>
                     <div class="form-group">
                         <label for="dni">DNI</label>
-                        <input class="form-control" type="text" id="dni">
+                        <input class="form-control" type="text" id="dni" value="47434069">
                     </div>
                     <div class="form-group">
                         <button id="ingresar" class="btn btn-primary btn-lg btn-block form-check-control" onclick="login()">Ingresar</button>
