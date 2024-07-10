@@ -133,3 +133,23 @@ function aciertos(){
 }
 //ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
 //input.style.backgroundColor = 'pink';
+
+//tablas ahre
+async function llenarTabla(){
+    //let datos = await llamadoADatos()
+    //console.log(datos);
+    let htmlTabla = `<tr>
+        <th>Jugador</th>
+        <th>Puntaje</th>
+    </tr>`
+    /*
+    for (let i = 0; i < datos.length; i++) {
+        htmlTabla += `<tr>
+            <td>${datos[i].Jugador}</td>
+            <td>${datos[i].Puntaje}</td>
+        </tr>`  
+    }
+        */
+    document.getElementById("tabla1").innerHTML = htmlTabla
+}
+

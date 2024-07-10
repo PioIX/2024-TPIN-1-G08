@@ -1,3 +1,7 @@
+:root {
+    --COLOR_TITULO: #f092d8;
+}
+
 body {
     background-color: #444142;
 }
@@ -141,4 +145,37 @@ input.cuad{
     border: none; 
     cursor: pointer;
     float: right; 
+}
+
+h4 {
+    font-weight: bolder;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: Figtree;
+    font-size: 35px;
+    color: #f092d8;
+}
+
+.recuadro {
+    border-radius: 30px;
+    width: 300px;
+    background-color: white;
+    height: 500px;
+    margin: 0 20px; /* Margen horizontal entre recuadros */
+
+}
+
+.titulo-recuadro {
+    color: var(--COLOR_TITULO);
+    text-align: center;
+}
+
+.tablas {
+    display: flex;
+    margin: 50px;
+}
+
+h5{
+    margin-top: 20px;
 }

@@ -43,6 +43,7 @@ app.post('/registrarPalabras', async function(req, res){
         VALUES('${req.body.palabra}', '${req.body.cantidadLetras}', '${req.body.definicion}')`);
     res.send("ok");
 })
+
 //Pongo el servidor a escuchar
 app.listen(port, function(){
     console.log(`Server running in http://localhost:${port}`);
