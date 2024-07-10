@@ -1,5 +1,5 @@
 var usuarioLogueadoId = 0
-
+changeScreen()
 async function login() {
     let user = getUsuario();
     let password = getPassword();
@@ -67,7 +67,6 @@ async function enviarPalabra() {
             return false;
         }
     }
-
     if( await enviarPalabraFetch(palabra, cantidadLetras, definicion) == true){
         alert("la palabra se envio correctamente")
         return true;   
@@ -76,9 +75,10 @@ async function enviarPalabra() {
         return false;
     }
 }
-async function botonLogOut () {
+
+async function botonLogOut() {
     usuarioLogueadoId = 0
-    changeScreen() 
+    screenLogin()   
     document.getElementById("username").value = ""
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
@@ -127,3 +127,61 @@ async function botonLogOutAdmin () {
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
 }
+let fila = 1
+let palabraRand = ""
+
+async function crear(){
+    let palabras = await palabrasGet()
+    let indiceAleatorio = Math.floor(Math.random() * palabras.length);
+    palabraRand = palabras[indiceAleatorio].palabra
+    palabraRand = palabraRand.toLowerCase()
+    let cant_letras = palabraRand.length
+
+    crearJuego(cant_letras)
+}
+
+let letras = []
+
+function arrayLetrasIngresadas(){
+    for (let i = 0; i < palabraRand.length; i++) {
+        let letra = document.getElementById(`letra${fila}-${i+1}`).value
+        letras.push(letra) 
+    }
+
+    for (let i = 0; i < letras.length; i++) {
+        letras[i] = letras[i].toLowerCase()   
+    }
+    
+    fila += 1
+
+    return letras
+}
+
+let values = []
+
+function revisarLetra(numLetra){ 
+    if (palabraRand.includes(letras[numLetra])){
+        for (let i = 0; i < palabraRand.length; i++) {
+            if (i == numLetra){
+                values.push(2)
+            }
+        }
+    }
+    else if (palabraRand.includes(letras[numLetra])){
+        values.push(1)
+    }
+    else{
+        values.push(0)
+    }
+}
+
+function aciertos(){
+    for (let i = 0; i < letras.length; i++) {
+        revisarLetra(i)
+    }
+
+    letras = []
+    values = []
+}
+//ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
+//input.style.backgroundColor = 'pink';
