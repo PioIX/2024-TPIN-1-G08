@@ -16,6 +16,10 @@ h2 {
     font-weight: bold;
 }
 
+a {
+    background-color: #FFEFFC;
+    font-family: Poppins;
+}
 header {
     display: flex;
     justify-content: flex-start;
@@ -46,7 +50,8 @@ h3 {
 }
 
 #divlogin,
-#registroPalabras {
+#registroPalabras,
+#contenidoreglas {
     background-color: #FFEFFC;
     font-family: Poppins;
 }
