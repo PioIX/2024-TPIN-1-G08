@@ -136,20 +136,48 @@ function aciertos(){
 
 //tablas ahre
 async function llenarTabla(){
-    //let datos = await llamadoADatos()
-    //console.log(datos);
+    let datos = await getPuntajes()
+    console.log("datos es: ",datos)
     let htmlTabla = `<tr>
-        <th>Jugador</th>
-        <th>Puntaje</th>
+        <th class="tableHeader">Jugador</th>
+        <th class="tableHeader">Intento</th>
+        <th class="tableHeader">Puntaje</th>
     </tr>`
-    /*
+
     for (let i = 0; i < datos.length; i++) {
         htmlTabla += `<tr>
-            <td>${datos[i].Jugador}</td>
-            <td>${datos[i].Puntaje}</td>
+            <td class="tableData">${datos[i].id_usuario}</td>
+            <td class="tableData">${datos[i].intento}</td>
+            <td class="tableData">${datos[i].aciertos}</td>
         </tr>`  
     }
-        */
     document.getElementById("tabla1").innerHTML = htmlTabla
+}
+
+async function sacarPromedio (datos){
+    console.log({datos})
+    console.log({intento: datos.intento})
+
+    let promedio = (datos.intento + datos.aciertos) /2
+
+    return promedio
+}
+
+async function llenarTabla2(){
+    let datos = await getPuntajes()
+    console.log("datos es: ",datos)
+    let htmlTabla = `<tr>
+        <th class="tableHeader">Jugador</th>
+        <th class="tableHeader">Promedio</th>
+    </tr>`
+
+    for (let i = 0; i < datos.length; i++) {
+        let promedio = await sacarPromedio(datos[i])
+        htmlTabla += `<tr>
+            <td class="tableData">${datos[i].id_usuario}</td>
+            <td class="tableData">${promedio}</td>
+        </tr>`  
+    }
+    document.getElementById("tabla2").innerHTML = htmlTabla
 }
 

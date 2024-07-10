@@ -57,3 +57,15 @@ async function enviarPalabra(){
     return true
 }
 
+async function getPuntajes(){
+    const response = await fetch('http://localhost:3000/puntajes',{
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    console.log(response)
+    const datos = await response.json()
+    return datos
+}
+

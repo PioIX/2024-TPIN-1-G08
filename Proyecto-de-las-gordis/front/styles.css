@@ -1,6 +1,6 @@
-:root {
+/*:root {
     --COLOR_TITULO: #f092d8;
-}
+}*/
 
 body {
     background-color: #444142;
@@ -160,22 +160,45 @@ h4 {
 .recuadro {
     border-radius: 30px;
     width: 300px;
-    background-color: white;
+    background-color: #f092d8;
     height: 500px;
     margin: 0 20px; /* Margen horizontal entre recuadros */
 
 }
 
 .titulo-recuadro {
-    color: var(--COLOR_TITULO);
+    /*color: var(--COLOR_TITULO);*/
     text-align: center;
+    color: #000000;
 }
 
 .tablas {
     display: flex;
     margin: 50px;
+    justify-content: space-around;
 }
 
 h5{
     margin-top: 20px;
+}
+
+.tableHeader {
+    color: #000000;
+    text-align: center;
+}
+
+.tableData {
+    color: #000000;
+}
+
+#tabla1 {
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+
+#tabla2 {
+    margin: auto;
+    text-align: center;
+    align-items: center;
 }

@@ -44,6 +44,13 @@ app.post('/registrarPalabras', async function(req, res){
     res.send("ok");
 })
 
+//tablas
+app.get('/puntajes', async function(req,res){
+    console.log(req.query) //Los pedidos get reciben los datos del req.query
+    const respuesta = await MySql.realizarQuery(`SELECT * FROM Puntajes`)
+    res.send(respuesta)
+})
+
 //Pongo el servidor a escuchar
 app.listen(port, function(){
     console.log(`Server running in http://localhost:${port}`);
@@ -53,4 +60,5 @@ app.listen(port, function(){
     console.log('   [POST] http://localhost:3000/registrarUsuarios');
     console.log('   [POST] http://localhost:3000/registrarPalabras');
     console.log('   [GET] http://localhost:3000/getPalabras')
+    console.log('   [GET] http://localhost:3000/puntajes')
 });
