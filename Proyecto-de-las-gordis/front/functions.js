@@ -1,5 +1,8 @@
 var usuarioLogueadoId = 0
 
+changeScreen()
+
+
 async function login() {
     let user = getUsuario();
     let password = getPassword();
@@ -22,12 +25,6 @@ async function login() {
 
     // Si ningún usuario coincide, muestra el mensaje de error
     alert("Ese usuario no existe. Inicie el registro");
-}
-
-async function Reglas() {
-    alert(
-        "Estamos chelo en este sector"
-    )
 }
 
 async function registro() {

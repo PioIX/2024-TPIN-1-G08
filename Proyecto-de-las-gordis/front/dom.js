@@ -71,7 +71,6 @@ function changeScreenUsuario(){
     let ubicacion = location.href = "http://127.0.0.1:5500/Proyecto-de-las-gordis/front/perfilUsuario.html"
 }
 
-
 function getUsuario(){
     const usuario = document.getElementById("username").value
     return usuario
@@ -97,7 +96,7 @@ function getPalabra(){
     return palabra
 }
 
-function GetDefinicion() {
+function getDefinicion() {
     const definicion = document.getElementById("definicion").value
     return definicion
 }

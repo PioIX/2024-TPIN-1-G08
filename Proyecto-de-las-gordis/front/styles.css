@@ -16,6 +16,11 @@ h2 {
     font-weight: bold;
 }
 
+a {
+    background-color: #FFEFFC;
+    font-family: Poppins;
+}
+
 header {
     display: flex;
     justify-content: flex-start;
@@ -46,7 +51,8 @@ h3 {
 }
 
 #divlogin,
-#registroPalabras {
+#registroPalabras,
+#contenidoreglas {
     background-color: #FFEFFC;
     font-family: Poppins;
 }
@@ -85,10 +91,10 @@ h3 {
 }
 
 #username, #password, #dni, #definicion, #palabra, #cantidadLetras {
-    background-color: #c4c1c1;
+    background-color: #c4c1c1; /* cacici */
 }
 
-#reglas, #jugar  {
+#reglas, #jugar, #volveraprincipal  {
     color: white;
     background-color: #797373; 
     display: flex;
@@ -97,18 +103,24 @@ h3 {
     padding: 5px 10px;
 }
 
+#divvolveraprincipal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-#logout, #botonLogOut {
+
+#logout {
     background-color: #CF6AB6;
     display: flex;
     justify-content: end;
     width: auto; 
     padding: 5px 10px; 
 }
-
 #divLogOut {
     display: flex;
-    justify-content: end;
+    align-items: right;
+    justify-content: right;
 }
 
 #divreglas, #divJugar {
