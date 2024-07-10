@@ -1,4 +1,8 @@
 var usuarioLogueadoId = 0
+let fila = 1
+let palabraRand = ""
+let values = []
+let letras = []
 
 changeScreen()
 
@@ -80,42 +84,6 @@ async function botonLogOut() {
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
 }
-/*async function mostrarTabla(){
-        // Obtener la referencia del elemento body
-    let body = document.getElementsByTagName("body")[0];
-
-    // Crea un elemento <table> y un elemento <tbody>
-    let tabla = document.createElement("table");
-    let tblBody = document.createElement("tbody");
-
-    // Crea las celdas
-    for (let i = 0; i < palabraExistente.length; i++) {
-        // Crea las hileras de la tabla
-        let hilera = document.createElement("tr");
-
-        for (let j = 0; j < palabraExistente.length; j++) {
-        // Crea un elemento <td> y un nodo de texto, haz que el nodo de
-        // texto sea el contenido de <td>, ubica el elemento <td> al final
-        // de la hilera de la tabla
-        let celda = document.createElement("td");
-        /*let textoCelda = document.createTextNode(
-            "celda en la hilera " + i + ", columna " + j,
-        );
-        celda.appendChild(textoCelda);
-        hilera.appendChild(celda);
-        }
-
-        // agrega la hilera al final de la tabla (al final del elemento tblbody)
-        tblBody.appendChild(hilera);
-    }
-
-    // posiciona el <tbody> debajo del elemento <table>
-    tabla.appendChild(tblBody);
-    // appends <table> into <body>
-    body.appendChild(tabla);
-    // modifica el atributo "border" de la tabla y lo fija a "2";
-    tabla.setAttribute("border", "2");
-}*/
 
 async function botonLogOutAdmin () {
     usuarioLogueadoId = 0
@@ -124,9 +92,6 @@ async function botonLogOutAdmin () {
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
 }
-let fila = 1
-let palabraRand = ""
-let values = []
 
 async function crear(){
     let palabras = await palabrasGet()
@@ -138,37 +103,27 @@ async function crear(){
     crearJuego(cant_letras)
 }
 
-let letras = []
-
-function arrayLetrasIngresadas(){
+function arrayLetrasIngresadas() {
+    letras = [];
     for (let i = 0; i < palabraRand.length; i++) {
-        let letra = document.getElementById(`letra${fila}-${i+1}`).value
-        letras.push(letra) 
+        let letra = document.getElementById(`letra${fila}-${i + 1}`).value;
+        letras.push(letra.toLowerCase());
     }
 
-    for (let i = 0; i < letras.length; i++) {
-        letras[i] = letras[i].toLowerCase()   
-    }
-    
-    fila += 1
-    values = []
-
-    return letras
+    return letras;
 }
 
-function revisarLetra(numLetra){ 
-    if (palabraRand.includes(letras[numLetra])){
-        for (let i = 0; i < palabraRand.length; i++) {
-            if (i == numLetra){
-                values.push(2)
-            }
-        }
-    }
-    else if (palabraRand.includes(letras[numLetra])){
-        values.push(1)
-    }
-    else{
-        values.push(0)
+function revisarLetra(numLetra) {
+    let input = document.getElementById(`letra${fila}-${numLetra + 1}`);
+    if (palabraRand[numLetra] === letras[numLetra]) {
+        input.style.backgroundColor = '#becbbd'; // Correcta en la posición correcta
+        values.push(2);
+    } else if (palabraRand.includes(letras[numLetra])) {
+        input.style.backgroundColor = '#FFBEEF'; // Correcta pero en la posición incorrecta
+        values.push(1);
+    } else {
+        input.style.backgroundColor = '#797373'; // Incorrecta
+        values.push(0);
     }
 }
 
@@ -176,12 +131,12 @@ function promedioPuntaje(){
      
 }
 
-function aciertos(){
+function aciertos() {
     for (let i = 0; i < letras.length; i++) {
-        revisarLetra(i)
+        revisarLetra(i);
     }
-
-    letras = []
+    letras = [];
+    fila += 1; // Incrementar la fila solo después de procesar y actualizar los colores
 }
 //ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
 //input.style.backgroundColor = 'pink';

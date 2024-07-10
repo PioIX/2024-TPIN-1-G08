@@ -103,7 +103,7 @@ function getDefinicion() {
 
 // funcion para llenar la tabla del wordle segun palabras
 // falta integrar lo de q agarre de la cantidad de letras a partir de la palabra que se vaya a jugar no se como ja
-function crearJuego(cant_letras) {
+async function crearJuego(cant_letras) {
     const juegosContainer = document.getElementById('juegos');
     juegosContainer.innerHTML = '';
 
@@ -116,6 +116,7 @@ function crearJuego(cant_letras) {
             const input = document.createElement('input');
             input.id = `letra${i}-${j}`;
             input.className = 'cuad';
+            input.setAttribute('maxlength', '1');
             fila.appendChild(input);
         }
         juegosContainer.appendChild(fila);
