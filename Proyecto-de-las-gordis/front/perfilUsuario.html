@@ -23,10 +23,10 @@
     <body class="container">
         <header>
             <h2><img src="images/lobo.png" alt="Lobo">Wordle Pio IX</h2>
-            <img src="images/user.png" alt="user" id="user">
+            <button onclick="changeScreenUsuario()" alt="user" id="userBoton"><img src="images/user.png" alt="user" id="user"></button>
         </header>
         <section id="registroPalabras" class="rounded">
-            <h3>REGISTRAR PALABRAS</h3>
+            <h3 id="tituloPerfil" onload="tituloPerfil()"> Perfil de </h3>
             <div id="divRegistroPalabras" class = "">
                 <div class="shadow p-3 mb-5 rounded">
                     <div class="form-group">
@@ -47,11 +47,10 @@
                     </div>
                 </div>
             </div>
-             
         </section>
         <div class="form-group" id="divLogOut">
-            <button id="botonLogOut" class="btn btn-primary btn-lg btn-block form-check-control" onclick="botonLogOutAdmin()">Log Out</button>
-        </div>
+            <button id="botonLogOut" class="btn btn-primary btn-lg btn-block form-check-control" onclick="botonLogOutAdmin()">Volver a la Pantalla Principal</button>
+        </div> 
         <script src="dom.js"></script>
         <script src="functions.js"></script>    
         <script src="fetch.js"></script>      

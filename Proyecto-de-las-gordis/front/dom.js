@@ -8,8 +8,8 @@ function changeScreen() {
     const login = document.getElementById("login");
     const logout = document.getElementById("logout");
     const reglas = document.getElementById("reglas");
+    const userBoton = document.getElementById("userBoton")
     const pantallaJuego = document.getElementById("juegos")
-
     let usernamePiketeras = document.getElementById("username").value
     let contraseñaPiketeras = document.getElementById("password").value
     let dniPiketeras = document.getElementById("dni").value
@@ -20,15 +20,19 @@ function changeScreen() {
         pantallaPrincipal.style.display = "none";
         logout.style.display = "none";
         reglas.style.display = "none";
+        userBoton.style.display = "none";
         login.style.display = ""; // Mostrar botón de login si es necesario
+     
 
     } else {
         // Mostrar pantalla principal y logout
         pantallaPrincipal.style.display = "";
         logout.style.display = ""; // Mostrar botón de logout
         reglas.style.display = "";
+        userBoton.style.display = "";
         login.style.display = "none"; // Ocultar botón de login si es necesario
         pantallaJuego.style.display = "none"
+
     }
 }
 
@@ -63,6 +67,10 @@ function changeScreenAdmin(){
     location.href = "http://127.0.0.1:5500/Proyecto-de-las-gordis/front/index.html"
 }
 
+function changeScreenUsuario(){
+    location.href = "http://127.0.0.1:5500/Proyecto-de-las-gordis/front/perfilUsuario.html"
+    
+}
 
 
 function getUsuario(){
@@ -114,4 +122,12 @@ function crearJuego(cant_letras) {
         }
         juegosContainer.appendChild(fila);
     }
+}
+
+async function tituloPerfil(){
+    console.log("a")
+    let nombreUser = document.getElementById("username").value
+    let nombre = document.getElementById("tituloPerfil").value
+    nombre = `Perfil de a`
+
 }

@@ -1,5 +1,5 @@
 var usuarioLogueadoId = 0
-changeScreen()
+
 async function login() {
     let user = getUsuario();
     let password = getPassword();
