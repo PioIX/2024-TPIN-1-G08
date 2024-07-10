@@ -38,10 +38,14 @@ app.get('/getPalabras', async function(req, res){
 })
 
 app.post('/registrarPalabras', async function(req, res){
-    console.log(req.body)
-    await MySql.realizarQuery(`INSERT INTO Palabras(palabra, cant_letras, descripcion)
-        VALUES('${req.body.palabra}', '${req.body.cantidadLetras}', '${req.body.definicion}')`);
-    res.send("ok");
+    
+    let resultado = await MySql.realizarQuery(`SELECT * FROM Palabras WHERE palabra = '${req.body.palabra}'`) 
+    if (resultado.length != 0) {
+        res.send("palabra ya existe");
+    } else { 
+        await MySql.realizarQuery(`INSERT INTO Palabras(palabra, cant_letras, descripcion) VALUES('${req.body.palabra}', '${req.body.cantidadLetras}', '${req.body.definicion}')`);
+        res.send("ok");
+    }
 })
 //Pongo el servidor a escuchar
 app.listen(port, function(){

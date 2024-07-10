@@ -55,15 +55,24 @@ async function registro() {
         alert("Hubo un error en el ingreso de datos");
     }
 }
-async function enviarPalabrasFuncion(){
-    let palabraExistente = await palabrasGet()
-    let cantidadLetras = getCantidadLetras();
+async function enviarPalabra() {
+    let palabraExistente = await palabrasGet();
     let palabra = getPalabra();
-    let definicion = getDefinicion();
-    for(let i = 0; i<palabrasExistentes; i++){ //crear funcion palabrasExistentes
-        if(palabrasExistentes[i].palabra == palabra){
-            alert("esta palabra ya existe")
+    let cantidadLetras = getCantidadLetras();
+    let definicion = GetDefinicion();
+    
+    for(let i = 0; i< palabraExistente.length;i++){
+        if( palabra == palabraExistente[i].palabra){
+            alert("Esta palabra ya existe")
+            return false;
         }
+    }
+    if( await enviarPalabraFetch(palabra, cantidadLetras, definicion) == true){
+        alert("la palabra se envio correctamente")
+        return true;   
+    } else {
+        alert("algo salio mal")
+        return false;
     }
 }
 
@@ -74,7 +83,50 @@ async function botonLogOut() {
     document.getElementById("password").value = ""
     document.getElementById("dni").value = ""
 }
+/*async function mostrarTabla(){
+        // Obtener la referencia del elemento body
+    let body = document.getElementsByTagName("body")[0];
 
+    // Crea un elemento <table> y un elemento <tbody>
+    let tabla = document.createElement("table");
+    let tblBody = document.createElement("tbody");
+
+    // Crea las celdas
+    for (let i = 0; i < palabraExistente.length; i++) {
+        // Crea las hileras de la tabla
+        let hilera = document.createElement("tr");
+
+        for (let j = 0; j < palabraExistente.length; j++) {
+        // Crea un elemento <td> y un nodo de texto, haz que el nodo de
+        // texto sea el contenido de <td>, ubica el elemento <td> al final
+        // de la hilera de la tabla
+        let celda = document.createElement("td");
+        /*let textoCelda = document.createTextNode(
+            "celda en la hilera " + i + ", columna " + j,
+        );
+        celda.appendChild(textoCelda);
+        hilera.appendChild(celda);
+        }
+
+        // agrega la hilera al final de la tabla (al final del elemento tblbody)
+        tblBody.appendChild(hilera);
+    }
+
+    // posiciona el <tbody> debajo del elemento <table>
+    tabla.appendChild(tblBody);
+    // appends <table> into <body>
+    body.appendChild(tabla);
+    // modifica el atributo "border" de la tabla y lo fija a "2";
+    tabla.setAttribute("border", "2");
+}*/
+
+async function botonLogOutAdmin () {
+    usuarioLogueadoId = 0
+    changeScreenAdmin() 
+    document.getElementById("username").value = ""
+    document.getElementById("password").value = ""
+    document.getElementById("dni").value = ""
+}
 let fila = 1
 let palabraRand = ""
 

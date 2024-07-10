@@ -97,6 +97,9 @@ h3 {
     padding: 5px 10px;
 }
 
+#logout, #botonLogOut{
+  background-color: #FF5757;
+}
 #logout {
     background-color: #CF6AB6;
     display: flex;
