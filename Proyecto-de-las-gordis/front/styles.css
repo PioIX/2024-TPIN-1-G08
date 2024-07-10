@@ -20,6 +20,7 @@ a {
     background-color: #FFEFFC;
     font-family: Poppins;
 }
+
 header {
     display: flex;
     justify-content: flex-start;
@@ -93,7 +94,7 @@ h3 {
     background-color: #c4c1c1; /* cacici */
 }
 
-#reglas, #jugar  {
+#reglas, #jugar, #volveraprincipal  {
     color: white;
     background-color: #797373; 
     display: flex;
@@ -101,10 +102,13 @@ h3 {
     width: auto;
     padding: 5px 10px;
 }
-
-#logout, #botonLogOut{
-  background-color: #FF5757;
+#divvolveraprincipal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 #logout {
     background-color: #CF6AB6;
     display: flex;
@@ -112,10 +116,10 @@ h3 {
     width: auto; 
     padding: 5px 10px; 
 }
-#divlogout {
+#divLogOut {
     display: flex;
     align-items: right;
-    justify-content: end;
+    justify-content: right;
 }
 
 #divreglas, #divJugar {
