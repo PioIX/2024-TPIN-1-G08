@@ -64,7 +64,6 @@ function changeScreenAdmin(){
 }
 
 
-
 function getUsuario(){
     const usuario = document.getElementById("username").value
     return usuario
@@ -90,7 +89,7 @@ function getPalabra(){
     return palabra
 }
 
-function GetDefinicion() {
+function getDefinicion() {
     const definicion = document.getElementById("definicion").value
     return definicion
 }

@@ -24,12 +24,6 @@ async function login() {
     alert("Ese usuario no existe. Inicie el registro");
 }
 
-async function Reglas() {
-    alert(
-        "Estamos chelo en este sector"
-    )
-}
-
 async function registro() {
     let usuariosExistentes = await usuariosDB();
     let user = getUsuario();
