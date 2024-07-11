@@ -60,10 +60,11 @@ async function enviarPalabraFetch(palabra, cantidadLetras, definicion){
     return true
 }
 
-async function enviarPuntaje(aciertos, id_usuario){
+async function enviarPuntaje(aciertos){
     const data = {
         aciertos: aciertos,
-        id_usuario: id_usuario,
+        id_usuario: usuarioLogueadoId,
+        intento: fila,
     }
     const response = await fetch('http://localhost:3000/registrarPuntajes',{
         method: "POST",
@@ -75,3 +76,16 @@ async function enviarPuntaje(aciertos, id_usuario){
     return true
 }
 
+
+async function getPuntajes(){
+    const response = await fetch('http://localhost:3000/getPuntajes',{
+        method:"GET",
+        headers: {
+            "Content-Type": "application/json",
+          },
+    })
+
+    console.log(response)
+    const datos = await response.json() 
+    return(datos) 
+}
