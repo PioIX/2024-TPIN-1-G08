@@ -172,20 +172,22 @@ function aciertos() {
 
     console.log(values)
 
-    if (puntaje == values.length){
-        let espacio = document.getElementById("definicion").value
-        
-        espacio = `
-        <p>Felicidades has acertado la palabra
-        Su definicion era: ${defRand}
-        Para volver al juego presiona el boton de abajo
-        </p>
-        <a href="index.html" onclick="changeScreen()"> 
+    if (puntaje == values.length) {
+        console.log("Termino el juego");
+        const espacio = `
+            <p>Felicidades has acertado la palabra
+            Su definicion era: ${defRand}
+            Para volver al juego presiona el boton de abajo
+            </p>
+            <a href="index.html" onclick="changeScreen()"> 
                 <button id="volveraprincipal" class="btn btn-primary btn-lg btn-block form-check-control">Volver al juego</button>
             </a>
-        `
-        console.log("Termino el juego")
+        `;
+        
+        document.getElementById("definicion").innerHTML = espacio;
+        
     }
+    
 
     enviarPuntaje(puntaje) //Manda un post a la base de datos con el puntaje del jugador
 
