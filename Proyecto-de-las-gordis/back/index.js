@@ -50,11 +50,17 @@ app.post('/registrarPalabras', async function(req, res){
 
 app.post('/registrarPuntajes', async function(req, res) {
     console.log(req.body);
-    await MySql.realizarQuery(`INSERT INTO Puntajes (aciertos, id_usuario)
-        VALUES ('${req.body.aciertos}', '${req.body.id_usuario}')`);
+    await MySql.realizarQuery(`INSERT INTO Puntajes (aciertos, id_usuario, intento)
+        VALUES ('${req.body.aciertos}', '${req.body.id_usuario}', '${req.body.intento}')`);
 
     res.send("ok");
 });
+
+app.get('/getPuntajes', async function(req, res){
+    console.log(req.query)
+    const respuesta = await MySql.realizarQuery(`SELECT * FROM Puntajes`)
+    res.send(respuesta)
+})
 
 //Pongo el servidor a escuchar
 app.listen(port, function(){
@@ -65,6 +71,6 @@ app.listen(port, function(){
     console.log('   [POST] http://localhost:3000/registrarUsuarios');
     console.log('   [POST] http://localhost:3000/registrarPalabras');
     console.log('   [GET] http://localhost:3000/getPalabras');
-    console.log('   [POST] http://localhost:3000/registrarPuntajes');
-
+    console.log('   [POST] http://localhost:3000/registrarPuntajes'); 
+    console.log('   [GET] http://localhost:3000/getPuntajes');
 });

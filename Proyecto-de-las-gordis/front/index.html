@@ -67,8 +67,11 @@
             </div>
         </section>
         <!-- aca se genera la tabla del wordle por funcion del dom -->
-        <section id="juegos" style="display: none"></section>
+        <section id="juegos" style="display: none">
+            <div id="definicion"></div>
+        </section>
         
+
         <script>
             document.addEventListener('keydown', function(event) {
                 if (event.key === 'Enter') {
@@ -76,7 +79,6 @@
                 }
             });
         </script>
-
 
         <div class="form-group" id="divLogOut">
             <button id="logout" class="btn btn-primary btn-lg btn-block form-check-control" onclick="botonLogOut()">Log Out</button>
@@ -87,3 +89,4 @@
         <script src="fetch.js"></script>      
     </body>
 </html>
+
