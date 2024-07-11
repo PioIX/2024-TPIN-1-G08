@@ -197,31 +197,29 @@ async function promedioPuntaje(){
     let datos = await getPuntajes();
 
     const agrupadosPorJugador = datos.reduce((acc, dato) => {
-        const { id_usuario, aciertos, intento } = dato;
+        const { id_usuario, aciertos } = dato;
         if (!acc[id_usuario]) {
             acc[id_usuario] = [];
         }
-        acc[id_usuario].push({ aciertos, intento });
+        acc[id_usuario].push(aciertos);
         return acc;
     }, {});
 
-    // Calcular promedio por jugador
-    const promediosPorJugador = Object.entries(agrupadosPorJugador).map(([id_usuario, datosJugador]) => {
-        const totalAciertos = datosJugador.reduce((sum, { aciertos }) => sum + aciertos, 0);
-        const totalIntentos = datosJugador.reduce((sum, { intento }) => sum + intento, 0);
-        const promedioAciertos = totalAciertos / datosJugador.length;
-        const promedioIntentos = totalIntentos / datosJugador.length;
+    // Calcular promedio de aciertos por jugador
+    const promediosPorJugador = Object.entries(agrupadosPorJugador).map(([id_usuario, aciertosArray]) => {
+        const totalAciertos = aciertosArray.reduce((sum, aciertos) => sum + aciertos, 0);
+        const promedioAciertos = totalAciertos / aciertosArray.length;
         return {
             id_usuario,
-            promedioAciertos,
-            promedioIntentos
+            promedioAciertos
         };
     });
 
     return promediosPorJugador;
 }
 
-
+//El resultado es un array de objetos donde cada objeto contiene id_usuario y promedioAciertos para cada jugador.
+//Debería funcionar bien y debería servir para el html
 
 //ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
 //input.style.backgroundColor = 'pink';
