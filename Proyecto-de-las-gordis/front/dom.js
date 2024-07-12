@@ -2,6 +2,8 @@
 // el botón de logout arranca oculto 
 document.getElementById("logout").style.display = "none";
 document.getElementById("reglas").style.display = "none";
+let username = document.getElementById("username").value
+localStorage.setItem("username", username)
 
 function changeScreen() {
     const pantallaPrincipal = document.getElementById("pantallaPrincipal");
@@ -124,9 +126,8 @@ async function crearJuego(cant_letras) {
 }
 
 async function tituloPerfil(){
-    console.log("a")
-    let nombreUser = document.getElementById("username").value
-    let nombre = document.getElementById("tituloPerfil").value
-    nombre = `Perfil de a`
-
+    let name = localStorage.username
+    let nombre = `Perfil de ${name}`
+    document.getElementById("tituloPerfil").innerHTML = nombre
 }
+

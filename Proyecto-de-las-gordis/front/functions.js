@@ -223,6 +223,8 @@ async function promedioPuntaje(){
 //El resultado es un array de objetos donde cada objeto contiene id_usuario y promedioAciertos para cada jugador.
 //Debería funcionar bien y debería servir para el html
 
+
+
 //ejemplo de como acambiar color de los inputs pero claramente falta toda la logica
 //input.style.backgroundColor = 'pink';
 
